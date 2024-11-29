@@ -5,7 +5,7 @@ import Map from '/src/components/Map';
 import Marketplace from '/src/components/Marketplace';
 import ClimateAlert from '/src/components/ClimateAlert';
 import About from '/src/pages/About';
-import NotFound from '/src/pages/NotFound';
+import NotFound from '/src/pages/ NotFound.jsx';
 
 function App() {
     return (
