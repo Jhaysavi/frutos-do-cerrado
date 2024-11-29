@@ -1,4 +1,4 @@
-import Calendar from './components/Calendar';
+import Calendar from 'src/components/Calendar.jsx';
 import Map from './components/Map';
 import Marketplace from './components/Marketplace';
 import ClimateAlert from './components/ClimateAlert';
