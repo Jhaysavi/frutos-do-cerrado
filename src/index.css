@@ -8,25 +8,88 @@ body, h1, nav, a {
 body {
   font-family: 'Arial', sans-serif;
   color: #333;
-  background-color: #f9f9f9;
+  background-color: #F3E9DD;
 }
 
 /* Header */
-header {
-  background-color: #4caf50; 
-  color: white; 
+.top-header {
+  background-color: #2F0C0C;
+  color: white;
   padding: 1rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  font-weight: bold;
+.logo-container .logo {
+  width: 100px;
 }
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.search-input {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  outline: none;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile span {
+  font-size: 0.9rem;
+}
+
+/* Conteúdo */
+.content {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* Navegação Inferior */
+.bottom-nav {
+  background-color: #2F0C0C;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav-item span {
+  font-size: 0.8rem;
+}
+
 
 /* Menu */
 nav {
@@ -42,13 +105,13 @@ nav a {
   font-weight: bold;
   color: white;
   padding: 0.5rem 1rem;
-  background-color: #388e3c;
+  background-color: #C06D11;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-  background-color: #2e7d32;
+  background-color: #d3852d;
 }
 
 /* Main */

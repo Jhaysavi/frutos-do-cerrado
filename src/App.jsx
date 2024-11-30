@@ -1,4 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { useState } from 'react';
+import { FaHome, FaCalendarAlt, FaMapMarkedAlt, FaShoppingCart, FaCloudSun, FaUser, FaSearch } from 'react-icons/fa';
 import Home from '/src/pages/Home';
 import Calendar from '/src/components/Calendar';
 import Map from '/src/components/Map';
@@ -8,20 +10,29 @@ import About from '/src/pages/About';
 import NotFound from '/src/pages/ NotFound.jsx';
 
 function App() {
+    const [showSearch, setShowSearch] = useState(false);
+
     return (
         <Router>
             <div className="App">
-                <header>
-                    <h1>Frutos do Cerrado</h1>
-                    <nav>
-                        <a href="/">Home</a>
-                        <a href="/calendar">Calendário</a>
-                        <a href="/map">Mapa</a>
-                        <a href="/marketplace">Marketplace</a>
-                        <a href="/climate-alert">Dados Climáticos</a>
-                        <a href="/about">Sobre</a>
-                    </nav>
+                {/* Top Header */}
+                <header className="top-header">
+                    <div className="logo-container">
+                        <img src="logo.png" alt="logo frutos do cerrado" className="logo" />
+                    </div>
+                    <div className="actions">
+                        <button className="search-icon" onClick={() => setShowSearch(!showSearch)}>
+                            <FaSearch />
+                        </button>
+                        {showSearch && <input type="text" placeholder="Buscar..." className="search-input" />}
+                        <div className="profile">
+                            <FaUser />
+                            <span>Perfil</span>
+                        </div>
+                    </div>
                 </header>
+
+                {/* Main Content */}
                 <main>
                     <Routes>
                         <Route path="/" element={<Home />} />
@@ -33,6 +44,30 @@ function App() {
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </main>
+
+                {/* Bottom Navigation */}
+                <nav className="bottom-nav">
+                    <Link to="/" className="nav-item">
+                        <FaHome />
+                        <span>Início</span>
+                    </Link>
+                    <Link to="/calendar" className="nav-item">
+                        <FaCalendarAlt />
+                        <span>Calendário</span>
+                    </Link>
+                    <Link to="/map" className="nav-item">
+                        <FaMapMarkedAlt />
+                        <span>Mapa</span>
+                    </Link>
+                    <Link to="/marketplace" className="nav-item">
+                        <FaShoppingCart />
+                        <span>Conteúdo</span>
+                    </Link>
+                    <Link to="/climate-alert" className="nav-item">
+                        <FaCloudSun />
+                        <span>Clima</span>
+                    </Link>
+                </nav>
             </div>
         </Router>
     );
